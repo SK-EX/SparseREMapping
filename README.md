@@ -3,7 +3,7 @@
 ## Paper information
 
 - **Title**: Enhancing 3D sparse reconstruction accuracy of scour terrain with gradient window and edge reprojection approach
-- **Authors**: Yuhang Wang<sup>2</sup>, Yongzhou Cheng<sup>2</sup>, Dunge Wang<sup>2</sup>
+- **Authors**: Yuhang Wang<sup>1</sup>, Yongzhou Cheng<sup>2</sup>, Dunge Wang<sup>3</sup>
 - **Journal**: Measurement
 - **Status**: Submitted
 
