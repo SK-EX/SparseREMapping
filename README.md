@@ -13,7 +13,7 @@
 
 This project consists of two main parts:
 
-1. Open to on-site scour terrain RGB images, laser terrain(data//2gs/Terrain.ply) and sparse reconstructed point cloud(model.ply) in ***data***.
+1. OpenAccess to on-site scour terrain RGB images, laser terrain(data//2gs/Terrain.ply) and sparse reconstructed point cloud(model.ply) in ***data***.
 2. terrain-reconstructed algorithms  written in python, contain *SFM*, *KNN-Linear*,  *Gradient* and *SparseREMapping* modules in ***code***
 
 
