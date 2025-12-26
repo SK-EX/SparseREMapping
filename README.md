@@ -1,1 +1,3 @@
-# Read more about the SparseREMapping
+# SparseREMapping
+## paper information 
+### 
