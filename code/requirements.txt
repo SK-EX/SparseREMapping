@@ -1,0 +1,39 @@
+# ============================================================
+# ScourFormer++: 单桩冲刷深度预测系统
+# 依赖环境: Python 3.10+, CUDA 12.1 (可选)
+# ============================================================
+
+# ---------- 核心深度学习 ----------
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.36.0        # HuggingFace (Depth Anything V2)
+accelerate>=0.25.0
+
+# ---------- 视觉基础 ----------
+opencv-python>=4.8.0
+Pillow>=10.0.0
+numpy>=1.24.0,<2.0.0
+scipy>=1.11.0
+scikit-image>=0.22.0
+matplotlib>=3.8.0
+
+# ---------- SAM (Segment Anything) ----------
+# pip install git+https://github.com/facebookresearch/segment-anything.git
+segment-anything>=1.0
+
+# ---------- LoRA 微调 ----------
+peft>=0.7.0
+
+# ---------- 可选：Mamba2 时序预测 ----------
+# 需要 CUDA 编译环境
+
+# pip install mamba-ssm
+# mamba-ssm>=2.0.0
+
+# ---------- 可选：3D 可视化 ----------
+# open3d>=0.18.0
+
+# ---------- 工具 ----------
+tqdm>=4.66.0
+einops>=0.7.0
+omegaconf>=2.3.0

@@ -1,0 +1,42 @@
+# ScourDepthFormer Configuration
+# ===============================
+# Default training & inference config with documentation.
+
+model:
+  encoder: vitl              # DINOv2 variant: vits | vitb | vitl | vitg
+  img_size: 518              # Input resolution (must be divisible by 14)
+  decoder_dim: 256           # Decoder hidden dimension
+  out_dim: 128               # Output feature dimension before heads
+  n_terrain_queries: 32      # Number of terrain attention queries
+
+data:
+  train_dir: data/random_140_H6_T1_6
+  val_ratio: 0.3               # Validation split ratio
+  augment: true               # Enable data augmentation
+
+training:
+  epochs: 100
+  batch_size: 2
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+  warmup_epochs: 5
+  grad_clip: 2.0
+  mixed_precision: true
+  num_workers: 0
+
+loss:
+  lambda_elev: 1.0            # Elevation regression weight
+  lambda_seg: 1.0             # Segmentation weight (Dice + Focal)
+  lambda_smooth: 0.05         # Edge-aware smoothness weight
+  lambda_phys: 0.1            # Physics prior weight
+  lambda_consist: 0.1         # Multi-view consistency weight
+
+physics:
+  pile_diameter_mm: 90.0      # Pile diameter for physical constraints
+  max_scour_depth_mm: 250.0   # Maximum expected scour depth
+
+output:
+  checkpoint_dir: result/checkpoints
+  log_dir: result/loss
+  val_every: 5                # Validate every N epochs
+  save_every: 20              # Save checkpoint every N epochs

@@ -1,0 +1,47 @@
+# ======================================================
+# 冲刷数据集配置文件
+# ======================================================
+
+# 数据目录
+data_dir: ./data
+
+# 桩参数
+pile:
+  diameter_mm: 45.0          # 桩的真实直径 (mm)
+  material: "transparent_glass"  # 透明玻璃（如 DPP 论文）
+  shape: "circular"           # 圆形截面
+
+# 水流条件（用于物理约束）
+flow:
+  velocity_ms: 0.19           # 流速 (m/s)
+  depth_m: 0.2               # 水深 (m)
+  sediment_d50_mm: 0.30      # 中值粒径 (mm)
+
+# 图像参数
+image:
+  width: 1920
+  height: 1080
+  fps: 30
+  model_input_size: [518, 518]  # Depth Anything V2 输入尺寸
+
+# 标注格式
+annotation:
+  # 方式一：比值标注（推荐）
+  # label = scour_depth / pile_diameter
+  # 例如: 桩径 45mm, 冲刷深 23.5mm → label = 0.522
+  type: "ratio"               # "ratio" | "absolute_mm" | "binary"
+
+  # 比值范围
+  ratio_range: [0.0, 3.5]     # 冲刷一般不超过 3.5D
+
+  # 方式二：分类标注（粗标注）
+  # 0: 无冲刷, 1: 轻微 (<0.5D), 2: 中等 (0.5-1.5D), 3: 严重 (>1.5D)
+  categories:
+    - name: "none"
+      range: [0.0, 0.1]
+    - name: "mild"
+      range: [0.1, 0.5]
+    - name: "moderate"
+      range: [0.5, 1.5]
+    - name: "severe"
+      range: [1.5, 3.5]
