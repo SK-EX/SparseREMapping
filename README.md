@@ -2,7 +2,7 @@
 
 ## Paper information
 
-- **Title**: Enhancing 3D sparse reconstruction accuracy of scour terrain with gradient window and edge reprojection approach
+- **Title**: SparseREMapping: Point cloud Upsampling for Scour Topography from Sparse Views
 - **Authors**: Yuhang Wang<sup>1</sup>, [Yongzhou Cheng<sup>2</sup>](https://www.csust.edu.cn/slgc/info/1170/7133.htm), Dunge Wang<sup>3</sup>
 - **Journal**: SIVP(Signal, imgaes and video processing)
 - **Status**: Submitted 2026.6.1 Peer review 2026.6.17
